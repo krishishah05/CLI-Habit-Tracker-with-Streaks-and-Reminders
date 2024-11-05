@@ -15,15 +15,15 @@ def main():
 
     while True:
         display_menu()
-        choice = input("Enter your choice: ").strip()
+        choice = input("Enter your choice: ").strip().lower()  # Convert choice to lowercase
 
         if choice == '1':
-            habit_name = input("Enter the name of the habit: ").strip()
+            habit_name = input("Enter the name of the habit: ").strip().lower()  # Convert habit name to lowercase
             manager.add_habit(habit_name)
             print(f"Habit '{habit_name}' added.")
         
         elif choice == '2':
-            habit_name = input("Enter the name of the habit to mark as complete: ").strip()
+            habit_name = input("Enter the name of the habit to mark as complete: ").strip().lower()  # Convert habit name to lowercase
             if manager.mark_habit_complete(habit_name):
                 print(f"Habit '{habit_name}' marked as complete.")
             else:
